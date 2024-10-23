@@ -1,8 +1,11 @@
+import { AuthComponent } from "../components/authComponent"
 
 export const Signin = () =>{ 
 
     
     return <div> 
-        Sign in 
+        <AuthComponent mode = "signin">
+
+        </AuthComponent>
     </div>
 }

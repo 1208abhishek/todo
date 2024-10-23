@@ -1,8 +1,8 @@
 
-export const Button = () =>{ 
+export const Button = ({label, onClick}) =>{ 
 
 
     return <div> 
-        Button component for signup and signin 
+        <button onClick={onClick}> {label}</button>
     </div>
 }
