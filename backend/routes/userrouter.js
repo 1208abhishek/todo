@@ -59,6 +59,7 @@ const signinSchema = zod.object({
     email: zod.string().email(), 
     password: zod.string()
 })
+
 router.post('/signin', async (req,res)=>{ 
 
     const {success} = signinSchema.safeParse(req.body); 
@@ -93,13 +94,14 @@ router.post('/signin', async (req,res)=>{
 })
 
 //  we need to do authentication before update our todo list for that case  we use authMiddleware 
-const updateSchema = zod.object({ 
+const todocreateSchema = zod.object({ 
     todo: zod.string()
 })
 
+
 // creating todo after sign in 
 router.post('/todo',authMiddleware, async (req,res) =>{ 
-    const {success} = updateSchema.safeParse(req.body); 
+    const {success} = todocreateSchema.safeParse(req.body); 
 
     if(!success) { 
         return res.status(411).json({ 
@@ -107,17 +109,28 @@ router.post('/todo',authMiddleware, async (req,res) =>{
         })
     } 
 
-    const udpateUser = Todo.updateOne({ 
-        todo:req.body.todo
+    const createTodo = Todo.create({ 
+        todo:req.body.todo, 
+        userId: req.userid
     })
 
     res.json({ 
-        message: "todo updated successfully"
+        message: "todo created  successfully"
     })
 
 })
 
+
+
+router.get('/todo:id', authMiddleware, async (req,res)=>{ 
+    
+})
+
+
+
+
 router.delete('/todo',authMiddleware, async (req,res) =>{ 
+    
 }) 
 
 

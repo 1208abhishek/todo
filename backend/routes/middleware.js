@@ -7,7 +7,6 @@ const authMiddleware = (req,res,next) => {
         return res.status(403).json({});    
     }
     
-
     
     try { 
         const token = authHeader.split(' ')[1]; 
@@ -30,7 +29,7 @@ const authMiddleware = (req,res,next) => {
     
         
 
-    
+
 } 
 
 module.exports = authMiddleware; 
