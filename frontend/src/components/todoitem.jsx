@@ -1,12 +1,13 @@
 
-export const TodoItem = ()=> { 
+export const TodoItem = ({item})=> { 
      
     return ( 
         <div> 
-            <p>go to gym 5-9pm</p>
+            <p>{item}</p>
             <button>Mark as done!</button>
         </div>
     )
 
 
 }
+
