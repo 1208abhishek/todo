@@ -1,17 +1,15 @@
-import { useState } from "react"
-import { DashboardInputComponent } from "../components/DashboardInputComponent"
-import axios from 'axios';
+
+
+import {DashboardInputComponent} from '../components/DashboardInputComponent'
+import { TodoItem } from '../components/todoitem'
 export const TodoDashboard = () =>{ 
+     
 
-    const [todo, setTodo] = useState(""); 
+
+
+
     return <div> 
-        <div> 
-            
-            
-        </div> 
-
-        <div> 
-
-        </div>    
-    </div>
+        <DashboardInputComponent/>
+        <TodoItem addtodo ={addTodo}></TodoItem>
+    </div>    
 }

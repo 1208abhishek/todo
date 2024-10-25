@@ -1,14 +1,21 @@
 import { useState } from "react"
 
-export const DashboardInputComponent = ({label, placeholder, onPress}) =>{ 
+export const DashboardInputComponent = ({addTodo}) =>{ 
+
     const[value, setValue] =useState("") ; 
-    function handleSubmit (e) { 
-        console.log(e.target.value)``
-    }   
+      
+    function handleSubmit () { 
+        addTodo(value); 
+    }
     
+    
+
+
     return ( 
-        <form submit={handleSubmit}> 
-            <input type="text"  placeholder="what's you wanna add ? "/> 
+        <form onSubmit={handleSubmit}> 
+            <input  type="text"  placeholder="what's in your mind ? " onChange={(e) => { 
+               setValue(e.target.value)
+            }}/> 
             <button>Add Task</button>
 
         </form> 
