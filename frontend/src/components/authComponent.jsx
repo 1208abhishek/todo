@@ -10,6 +10,8 @@ export const AuthComponent = ({ mode = "signup" }) => {
     const [email, setEmail] = useState(""); 
     const [password, setPassword] = useState(""); 
 
+
+
     const navigate = useNavigate(); 
 
     const handleSubmit = async () => {
@@ -38,6 +40,7 @@ export const AuthComponent = ({ mode = "signup" }) => {
             console.error("Error during authentication:", error);
         }
     };
+
 
     return (
         <div>
@@ -90,3 +93,6 @@ export const AuthComponent = ({ mode = "signup" }) => {
 AuthComponent.propTypes = {
     mode: PropTypes.oneOf(["signup", "signin"]),  // 'mode' must be either 'signup' or 'signin'
 };
+
+ 
+
