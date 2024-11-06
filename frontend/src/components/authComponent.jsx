@@ -8,11 +8,11 @@ import PropTypes from 'prop-types';  // Import PropTypes
 export const AuthComponent = ({ mode = "signup" }) => {
     const [username, setUsername] = useState(""); 
     const [email, setEmail] = useState(""); 
-    const [password, setPassword] = useState(""); 
-
-
+    const [password, setPassword] = useState("");  
+    
 
     const navigate = useNavigate(); 
+
 
     const handleSubmit = async () => {
         const endpoint = mode === "signup" 
@@ -93,6 +93,4 @@ export const AuthComponent = ({ mode = "signup" }) => {
 AuthComponent.propTypes = {
     mode: PropTypes.oneOf(["signup", "signin"]),  // 'mode' must be either 'signup' or 'signin'
 };
-
- 
 

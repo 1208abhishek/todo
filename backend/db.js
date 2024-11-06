@@ -2,7 +2,7 @@ const mongoose = require('mongoose') ;
 const { string } = require('zod');
 
 mongoose.connect("") ;  
- 
+
 
 // user schema 
 const UserSchema = new mongoose.Schema({ 

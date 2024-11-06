@@ -3,16 +3,14 @@ import { useState } from "react"
 export const DashboardInputComponent = ({addList}) =>{ 
 
     const[value, setValue] =useState("") ; 
-      
+       
     function handleSubmit () { 
         event.preventDefault() // since we are using form we need to stop the reload by default  
         addList(value); 
 
         setValue(" ") // after final submit we need to clear the Input component
         
-    } 
-    
-
+    }  
 
     return ( 
         <form onSubmit={handleSubmit}> 
@@ -20,7 +18,6 @@ export const DashboardInputComponent = ({addList}) =>{
                setValue(e.target.value)
             }}/> 
             <button>Add Task</button>
-
         </form> 
-    )
+    ) 
 }
