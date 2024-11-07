@@ -99,10 +99,10 @@ const todocreateSchema = zod.object({
 })
 
 
-// creating todo after sign in 
+// creating todo after signin and Authentication via jwt. 
 router.post('/todo',authMiddleware, async (req,res) =>{ 
     const {success} = todocreateSchema.safeParse(req.body); 
-
+    
     if(!success) { 
         return res.status(411).json({ 
             message: "provide correct inputs/ validation failed"

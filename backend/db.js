@@ -22,6 +22,7 @@ const TodosSchema = new mongoose.Schema({
         ref: "User", // Refers to the User model
         required: true
     }
+
 })
 
 const User = mongoose.model('User', UserSchema) ; 

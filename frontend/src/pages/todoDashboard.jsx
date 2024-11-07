@@ -7,8 +7,6 @@ export const TodoDashboard = () =>{
      
     const[listtodo, setListtodo] = useState([]); 
     
-
-    
     let addList = (value) =>{ 
         setListtodo([...listtodo, value]) 
     }
@@ -18,6 +16,10 @@ export const TodoDashboard = () =>{
 
         setListtodo([...newlisttodo])
     }
+
+    
+
+
     return <div> 
         <DashboardInputComponent addList={addList}/> 
         {listtodo.map((listItem,index) => { 
@@ -30,3 +32,4 @@ export const TodoDashboard = () =>{
 
     </div>    
 }
+
